@@ -1,0 +1,29 @@
+<template>
+
+    <template if:true={contact}>
+
+        <lightning-card title="Contact Details">
+
+            <lightning-input
+                label="Title"
+                value={contact.Title}
+                onchange={handleTitle}>
+            </lightning-input>
+
+            <lightning-input
+                label="Phone"
+                value={contact.Phone}
+                onchange={handlePhone}>
+            </lightning-input>
+
+            <lightning-button
+                label="Save"
+                variant="brand"
+                onclick={handleSave}>
+            </lightning-button>
+
+        </lightning-card>
+
+    </template>
+
+</template>

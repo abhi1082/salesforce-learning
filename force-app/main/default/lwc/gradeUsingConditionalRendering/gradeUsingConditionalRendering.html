@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Marks vs Grade">
+        <div class="slds-p-around_medium">
+            <lightning-input onchange={changeHandler} type="number" name="marks" label="enter your marks"></lightning-input>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <p lwc:if={gradeA}>
+                You got A
+            </p>
+            <p lwc:elseif={gradeB}>
+                You got B
+            </p>
+            <p lwc:elseif={gradeC}>
+                You got C
+            </p>
+            <p lwc:elseif={gradeD}>
+                You got D
+            </p>
+            <p lwc:elseif={gradeE}>
+                You got E
+            </p>
+            <p lwc:elseif={gradeF}>
+                You got F
+            </p>
+        </div>
+    </lightning-card>
+</template>

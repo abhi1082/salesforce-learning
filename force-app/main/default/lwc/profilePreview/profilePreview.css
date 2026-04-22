@@ -1,0 +1,24 @@
+.theme-container {
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.light {
+    background-color: #f0eee4;
+    color: black;
+}
+
+.dark {
+    background-color: #28292b;
+    color: white;
+}
+
+.ocean {
+    background-color: #869ac4;
+    color: white;
+}
+
+.glow {
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.7);
+}

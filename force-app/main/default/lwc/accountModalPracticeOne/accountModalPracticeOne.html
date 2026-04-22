@@ -1,0 +1,60 @@
+<template>
+
+
+	<!-- Create Account -->
+	<lightning-button
+		label="Create Account"
+		variant="brand"
+		onclick={openModal}>
+	</lightning-button>
+	
+	<!-- Account List Display -->
+	<template for:each={accounts} for:item="acc">
+		<p key={acc.id}>{acc.name}</p>
+	</template>
+	
+	<!-- Modal -->
+	<template if:true={isModalOpen}>
+		<section class="slds-modal slds-fade-in-open">
+			<div class="slds-modal__container">
+				<header class="slds-modal__header">
+					<h2 class="slds-text-heading_medium">Account Name</h2>
+				</header>
+				
+				<div class="slds-modal__content slds-p-around_medium">
+					<lightning-input
+						type="text"
+						label="Account Name"
+						value={accountName}
+						onchange={changeHandler}>
+					</lightning-input>
+					
+					<template if:true={isLoading}>
+						<lightning-spinner
+							alternative-text="Loading"
+							size={medium}>
+						</lightning-spinner>
+					</template>
+				</div>
+				
+				<footer class="slds-modal__footer">
+					<lightning-button
+						variant="destructive"
+						label="Cancel"
+						onclick={closeModal}>
+					</lightning-button>
+					
+					<lightning-button
+						variant="brand"
+						label="save"
+						onclick={saveHandler}
+						disabled={isLoading}>
+					</lightning-button>
+				</footer>
+			</div>
+		</section>
+		<div class="slds-backdrop slds-backdrop_open"></div>
+	</template>
+	
+	
+</template>

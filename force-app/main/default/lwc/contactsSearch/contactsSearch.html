@@ -1,0 +1,88 @@
+<template>
+    <lightning-card title="Contact Search">
+
+        <!-- SEARCH SECTION -->
+        <div class="slds-p-around_medium">
+            <lightning-input
+                label="Search by Last Name"
+                value={searchKey}
+                onchange={handleInputChange}>
+            </lightning-input>
+
+            <div class="slds-m-top_small">
+                <lightning-button
+                    label="Search"
+                    variant="brand"
+                    onclick={handleSearch}>
+                </lightning-button>
+            </div>
+        </div>
+
+        <!-- SPINNER -->
+        <template if:true={isLoading}>
+            <lightning-spinner 
+                alternative-text="Loading">
+            </lightning-spinner>
+        </template>
+
+        <!-- DATATABLE -->
+        <template if:true={contacts.length}>
+            <div class="slds-p-around_medium">
+                <lightning-datatable
+                    key-field="Id"
+                    data={contacts}
+                    columns={columns}
+                    onrowselection={handleRowSelection}>
+                </lightning-datatable>
+            </div>
+        </template>
+
+        <!-- DETAIL PANEL -->
+        <template if:true={selectedContact}>
+            <div class="slds-p-around_medium">
+
+                <lightning-card title="Edit Contact">
+                    <div class="slds-p-around_medium">
+                        <lightning-input
+                            label="First Name"
+                            value={selectedContact.FirstName}
+                            disabled>
+                        </lightning-input>
+                       
+                        <lightning-input
+                            label="Last Name"
+                            value={selectedContact.LastName}
+                            disabled>
+                        </lightning-input>
+                        
+                        <lightning-input
+                            label="Title"
+                            data-field="Title"
+                            value={selectedContact.Title}
+                            onchange={handleFieldChange}>
+                        </lightning-input>
+                        
+                        <lightning-input
+                            label="Phone"
+                            data-field="Phone"
+                            value={selectedContact.Phone}
+                            onchange={handleFieldChange}>
+                        </lightning-input>
+
+
+                        <div class="slds-p-around_medium">
+                            <lightning-button
+                                label="Save"
+                                variant="brand"
+                                onclick={handleSave}
+                                disabled={isSaving}>
+                            </lightning-button>
+                        </div>
+                    </div>
+                </lightning-card>
+
+            </div>
+        </template>
+
+    </lightning-card>
+</template>

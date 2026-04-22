@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Looping in Array using for:each">
+        <template for:each={numbers} for:item="num">
+            <div class="slds-p-around_xx-small" key={num}>{num}</div>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="Looping in Array of Objects using for:each">
+        <template for:each={accounts} for:item="acc">
+            <!-- Account container -->
+            <div key={acc.Id} class="slds-m-bottom_medium">
+                <p class="slds-p-horizontal_small">Name : {acc.Name}</p>
+                <p class="slds-p-horizontal_small">Industry : {acc.Industry}</p>
+                <p class="slds-p-horizontal_small">Rating : {acc.Rating}</p>
+                <p class="slds-p-horizontal_small">AnnualRevenue : {acc.AnnualRevenue}</p>
+            </div>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="Looping">
+        <template for:each={accounts} for:item="acc">
+            <!-- Account container -->
+            <div key={acc.Id} class="slds-m-bottom_medium">
+                <p class="slds-p-horizontal_small">Id : {acc.Id}</p>
+                <p class="slds-p-horizontal_small">Name : {acc.Name}</p>
+                <p class="slds-p-horizontal_small">Rating : {acc.Rating}</p>
+                <!-- Contact container -->
+                <template for:each={acc.Contacts} for:item="con">
+                    <div key={con.Id} class="slds-m-bottom_medium">
+                        <p class="slds-p-horizontal_small">Name : {con.Name}</p>
+                        <p class="slds-p-horizontal_small">Role : {con.Role}</p>
+                    </div>
+                </template>
+            </div>
+
+        </template>
+    </lightning-card>
+</template>

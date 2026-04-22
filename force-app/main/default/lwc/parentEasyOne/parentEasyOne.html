@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="parent component">
+        <div class="slds-p-around_medium">
+            <lightning-input 
+                type="text" 
+                label="Enter you name"  
+                onchange={changeHandler}>
+            </lightning-input>
+
+            <c-child-easy-one name={parentName}></c-child-easy-one>
+        </div>
+    </lightning-card>
+</template>

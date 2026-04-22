@@ -1,0 +1,19 @@
+<template>
+	<lightning-card title="Publisher">
+		<div class="slds-p-around_medium">
+            <lightning-combobox
+                label="Select Theme"
+                value={selectedTheme}
+                options={themeOptions}
+                onchange={handleThemeChange}>
+            </lightning-combobox>
+
+            <lightning-button
+                class="slds-m-top_medium"
+                label="Apply Theme"
+                variant="brand"
+                onclick={clickHandler}>
+            </lightning-button>
+        </div>
+	</lightning-card>
+</template>

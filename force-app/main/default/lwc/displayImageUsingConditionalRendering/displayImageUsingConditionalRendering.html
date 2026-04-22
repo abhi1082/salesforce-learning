@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Conditional Rendering">
+        <div class="slds-p-around_medium slds-grid">
+            <div class="slds-col">
+                <lightning-input onchange={changeHandler} type="checkbox" label="Display Cat Image" name="Display Cat Image"></lightning-input>
+            </div>
+            <div class="slds-col">
+                <lightning-input onchange={changeHandler} type="checkbox" label="Display Duck Image" name="Display Duck Image"></lightning-input>
+            </div>
+        </div>
+
+        <div class="slds-grid">
+            <div class="slds-col slds-p-around_medium" lwc:if={displayCatImage}>
+                <p>Image of Cat</p>
+                <img width="200" height="200" src="https://images.pexels.com/photos/33943967/pexels-photo-33943967.jpeg" alt="image of a cat">
+            </div>
+            <div class="slds-col slds-p-around_medium" lwc:if={displayDuckImage}>
+                <p>Image of Duck</p>
+                <img width="200" height="200" src="https://images.pexels.com/photos/33943982/pexels-photo-33943982.jpeg" alt="image of a duck">
+            </div>
+        </div>
+        
+    </lightning-card>
+</template>

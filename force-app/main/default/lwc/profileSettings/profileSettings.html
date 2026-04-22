@@ -1,0 +1,46 @@
+<template>
+	<lightning-card title="Publisher/ Profile Settings">
+		<div class="slds-p-around-medium">
+			
+			<!-- text input -->
+			<lightning-input
+				label="Display Name"
+				type="text"
+				value={name}
+				onchange={nameHandler}>
+			</lightning-input>
+			
+			<!-- combobox -->
+			<lightning-combobox
+				label="Theme"
+				value={selectedTheme}
+				options={availableOptions}
+				onchange={themeHandler}>
+			</lightning-combobox>
+			
+			<!-- checkbox -->
+			<lightning-input
+				type="checkbox"
+				label="Enable Glow Effect"
+				checked={isActive}
+				onchange={glowHandler}>
+			</lightning-input>
+			
+			<!-- spinner -->
+			<template if:true={isLoading}>
+				<lightning-spinner
+					alternative-text="Loading"
+					size="medium">
+				</lightning-spinner>
+			</template>
+			
+			<!-- button -->
+			<lightning-button
+				label="Save Preference"
+				variant="brand"
+				onclick={preferenceHandler}>
+			</lightning-button>
+				
+		</div>
+	</lightning-card>
+</template>

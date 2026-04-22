@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Load primitive data">
+        <div class="slds-p-around_medium">
+            <template for:each={heros} for:item="hero">
+                <p key={hero}>{hero}</p>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Load object data">
+        <div class="slds-p-around_medium">
+            <template for:each={contactList} for:item="contact">
+                <p key={contact.id}>{contact.firstname} {contact.lastname}</p>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Load object data using iterator">
+        <div class="slds-p-around_medium">
+            <template iterator:it={contactList}>
+                <div key={it.value.id}>
+                    <div lwc:if={it.first} class="list-first"></div>
+                    {it.value.firstname} {it.value.lastname}
+                    <div lwc:if={it.last} class="list-last"></div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

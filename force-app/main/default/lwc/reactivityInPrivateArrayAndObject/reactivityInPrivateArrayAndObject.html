@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Reactivity in private Array and Object">
+        <div class="slds-p-around_small">
+            <p>Student Details:</p>
+            <p>full-name - {student.fname} {student.lname}, roll - {student.roll}</p>
+        </div>
+        <lightning-button
+            class="slds-p-around_small"
+            variant="brand"
+            title="without the use of @track we check the changes"
+            label="without track"
+            icon-name="utility:replace"
+            onclick={withoutTrackChangeHandler}>
+        </lightning-button>
+
+        <lightning-button
+            class="slds-p-around_small"
+            variant="brand"
+            title="with the use of @track we check the changes"
+            label="with track"
+            onclick={withTrackChangeHandler}>
+        </lightning-button>
+
+        <lightning-button
+            class="slds-p-around_small"
+            variant="brand"
+            title="we try to change the entire reference"
+            label="reference change"
+            icon-name="action:lead_convert"
+            onclick={entireReferenceChangeHandler}>
+        </lightning-button>
+
+    </lightning-card>
+</template>

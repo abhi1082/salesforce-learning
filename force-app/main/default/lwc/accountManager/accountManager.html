@@ -1,0 +1,19 @@
+<template>
+
+    <lightning-card title="Account Manager" icon-name="standard:account">
+
+        <lightning-button
+            label="Create Account"
+            variant="brand"
+            onclick={openModal}>
+        </lightning-button>
+
+        <div class="slds-m-top_medium">
+            <template for:each={accounts} for:item="acc">
+                <p key={acc.id}>{acc.name}</p>
+            </template>
+        </div>
+
+    </lightning-card>
+
+</template>

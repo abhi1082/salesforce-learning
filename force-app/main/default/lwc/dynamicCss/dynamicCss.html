@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Dynamic CSS">
+        <div class="slds-p-around_small">
+            <p class={pColor}>Welcome to Learn LWC</p>
+        </div>
+
+        <div class="slds-p-around_small">
+            <lightning-button label="Add CSS" variant="brand" onclick={addCSSHandler} class="slds-p-around_small"></lightning-button>
+            <lightning-button label="remove CSS" variant="brand" onclick={removeCSSHandler} class="slds-p-around_small"></lightning-button>
+            <lightning-button label="toggle CSS" variant="brand" onclick={toggleCSSHandler} class="slds-p-around_small"></lightning-button>
+        </div>
+    </lightning-card>
+</template>

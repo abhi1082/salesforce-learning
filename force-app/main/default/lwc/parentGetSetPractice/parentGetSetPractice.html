@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Parent Component">
+        <lightning-input
+            type="number"
+            label="Base Price"
+            onchange={handlePriceChange}>
+        </lightning-input>
+
+        <lightning-input
+            type="number"
+            label="Discount (%)"
+            onchange={handleDiscountChange}>
+        </lightning-input>
+
+        <c-child-get-set-practice
+            price={price}
+            discount={discount}>
+        </c-child-get-set-practice>
+    </lightning-card>
+</template>

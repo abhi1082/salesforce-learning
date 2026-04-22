@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Account Search">
+        <lightning-input
+            label="Search Key"
+            type="text"
+            value={searchKey}
+            onchange={searchInputHandler}>
+        </lightning-input>
+
+        <lightning-button
+            label="Search"
+            onclick={searchHandler}>
+        </lightning-button>
+
+        <template if:true={isLoading}>
+            <lightning-spinner
+                alternative-text="Loading"
+                size="medium">
+            </lightning-spinner>
+        </template>
+
+        <template if:true={hasAccounts}>
+            <template for:each={accounts} for:item="acc">
+                <div key={acc.Id}>
+                    {acc.Name} : {acc.Industry} : {acc.Rating}
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+</template>

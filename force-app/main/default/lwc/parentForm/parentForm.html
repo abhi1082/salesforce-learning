@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Parent Form">
+        <c-child-input label="First Name"></c-child-input>
+        <c-child-input label="Last Name"></c-child-input>
+        <c-child-input label="Email"></c-child-input>
+
+        <lightning-button
+            label="Save"
+            variant="brand"
+            onclick={handleSave}>
+        </lightning-button>
+    </lightning-card>
+</template>

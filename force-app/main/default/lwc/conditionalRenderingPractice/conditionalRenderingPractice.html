@@ -1,0 +1,13 @@
+<template>
+    <div class="slds-p-around_medium">
+        <lightning-input type="checkbox" label="Display Output" name="Display" onchange={changeHandler}></lightning-input>
+    </div>
+    <div class="slds-p-around_medium">
+        <template lwc:if={displayOutput}>
+            <p>welcome to lwc</p>
+        </template>
+        <template lwc:else>
+            <p>you are not authorized</p>
+        </template>
+    </div>
+</template>

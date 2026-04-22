@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Parent Component">
+        <c-contact-form
+            onsavecontact={handleSaveContact}>
+        </c-contact-form>
+
+        <template for:each={contacts} for:item="con">
+            <p key={con.id}>
+                {con.firstName} {con.lastName}
+            </p>
+        </template>
+    </lightning-card>
+</template>

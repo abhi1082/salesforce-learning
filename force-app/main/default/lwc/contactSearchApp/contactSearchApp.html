@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Contact Search App">
+
+        <!-- search box -->
+         <c-contact-search-box
+            onsearch={handleSearch}>
+        </c-contact-search-box>
+
+        <!-- spinner -->
+         <template if:true={isLoading}>
+            <lightning-spinner
+                alternative-text="Loading">
+            </lightning-spinner>
+         </template>
+
+         <!-- contact list  -->
+         <c-contact-list
+            contacts={contacts}
+            oncontactselect={handleContactSelect}>
+        </c-contact-list>
+
+        <!-- contact details  -->
+        <c-contact-details
+            contact={selectedContact}
+            onsuccess={handleSuccess}>
+        </c-contact-details>
+
+    </lightning-card>
+</template>
